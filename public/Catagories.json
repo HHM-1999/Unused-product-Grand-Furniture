@@ -1,0 +1,79 @@
+ [ {
+    "_id":"1",
+    "catagories":"Bedroom",
+    "products":[
+      { 
+        "picture":"",
+        "name":"Bed and Matteress",
+        "location":"Chittagong",
+        "original_price":"$800",
+        "resale_price": "$550",
+        "year_of_use": "2"
+        
+      },
+      {
+       "picture":"",
+        "name":"Side Table",
+        "location":"Chittagong",
+        "original_price":"$500",
+        "resale_price": "$350",
+        "year_of_use": "3"
+        
+      }
+      
+    ]
+  },
+  {
+    "_id":"2",
+    "catagories":"Kitchen",
+    "products":[
+      { 
+        "picture":"",
+        "name":"Kitchen-Cabinet",
+        "location":"Chittagong",
+        "original_price":"$900",
+        "resale_price": "$750",
+        "year_of_use": "1"
+        
+      },
+      {
+       "picture":"",
+        "name":"Kitchen-Basket",
+        "location":"Dhaka",
+        "original_price":"$300",
+        "resale_price": "$150",
+        "year_of_use": "1"
+        
+      }
+      
+    ]
+  },
+{
+
+    "_id":"3",
+    "catagories":"Washroom",
+    "products":[
+      { 
+        "picture":"",
+        "name":"Bathroom Rack",
+        "location":"Barisal",
+        "original_price":"$600",
+        "resale_price": "$450",
+        "year_of_use": "2"
+        
+      },
+      {
+       "picture":"",
+        "name":"Mirror Cabinet",
+        "location":"Chittagong",
+        "original_price":"$500",
+        "resale_price": "$350",
+        "year_of_use": "1"
+        
+      }
+      
+    ]
+}
+
+
+]
