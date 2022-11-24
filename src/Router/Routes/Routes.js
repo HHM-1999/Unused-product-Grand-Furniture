@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Home/Blog/Blog";
+import Products from "../../Pages/Home/Categories/Products/Products";
 import Dashboard from "../../Pages/Home/Dashboard/Dashboard";
 import Home from "../../Pages/Home/Home/Home";
 
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
                 path: '/dashboard',
                 element: <Dashboard></Dashboard>
 
+            },
+            {
+                path: "/products/:id",
+                loader: () => fetch("Catagories.json"),
+                element: <Products></Products>
             },
             {
                 path: '/blog',

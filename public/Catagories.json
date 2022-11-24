@@ -3,7 +3,8 @@
     "catagories":"Bedroom",
     "products":[
       { 
-        "picture":"",
+        "id":"11",
+        "picture":"https://img.freepik.com/free-psd/realistic-modern-double-bedroom-with-furniture-frame_176382-411.jpg?size=626&ext=jpg&ga=GA1.2.89839238.1664401225&semt=sph",
         "name":"Bed and Matteress",
         "location":"Chittagong",
         "original_price":"$800",
@@ -12,8 +13,9 @@
         
       },
       {
-       "picture":"",
-        "name":"Side Table",
+       "id":"12",
+       "picture":"https://img.freepik.com/premium-photo/black-lacquered-bedside-table-with-table-lamp-silver-curly-stand_295714-4791.jpg?size=626&ext=jpg&ga=GA1.2.89839238.1664401225&semt=sph",
+        "name":" Bed Side Table",
         "location":"Chittagong",
         "original_price":"$500",
         "resale_price": "$350",
@@ -28,7 +30,8 @@
     "catagories":"Kitchen",
     "products":[
       { 
-        "picture":"",
+        "id":"21",
+        "picture":"https://img.freepik.com/free-vector/household-appliances-realistic-kitchen_1284-69261.jpg?size=626&ext=jpg&ga=GA1.2.89839238.1664401225&semt=sph",
         "name":"Kitchen-Cabinet",
         "location":"Chittagong",
         "original_price":"$900",
@@ -37,7 +40,8 @@
         
       },
       {
-       "picture":"",
+       "id":"22",
+       "picture":"https://img.freepik.com/free-photo/man-front-open-dishwasher-takes-out-puts-down-dishes_169016-12821.jpg?size=626&ext=jpg&ga=GA1.2.89839238.1664401225&semt=sph",
         "name":"Kitchen-Basket",
         "location":"Dhaka",
         "original_price":"$300",
@@ -54,7 +58,8 @@
     "catagories":"Washroom",
     "products":[
       { 
-        "picture":"",
+        "id":"31",
+        "picture":"https://img.freepik.com/free-vector/empty-wooden-shelves-gray-wall_107791-2328.jpg?w=740&t=st=1669281757~exp=1669282357~hmac=dfa0912697ed52c1f6b99b26c17f9afa72f3ed1aaf9a266a85832406b56ba63e",
         "name":"Bathroom Rack",
         "location":"Barisal",
         "original_price":"$600",
@@ -63,7 +68,8 @@
         
       },
       {
-       "picture":"",
+       "id":"32",
+       "picture":"https://img.freepik.com/premium-photo/sink-mirror-near-bathroom-door_305343-36262.jpg?w=360",
         "name":"Mirror Cabinet",
         "location":"Chittagong",
         "original_price":"$500",
