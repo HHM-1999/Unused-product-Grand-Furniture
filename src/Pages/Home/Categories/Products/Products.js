@@ -9,7 +9,7 @@ const Products = () => {
     const { products } = product;
 
     return (
-        <div className='grid gap-6 grid-rows-1 md:grid-rows-2 lg:grid-rows-2 mx-9 mt-9'>
+        <div className='grid gap-2 grid-rows-1 md:grid-rows-2 lg:grid-rows-2 mx-9 mt-9'>
 
             {
                 products?.map(product => <SingleProducts
