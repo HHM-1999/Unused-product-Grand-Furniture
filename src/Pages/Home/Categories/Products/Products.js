@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import SingleProducts from './SingleProducts';
@@ -5,6 +6,7 @@ import SingleProducts from './SingleProducts';
 
 
 const Products = () => {
+
     const product = useLoaderData();
     const { products } = product;
 

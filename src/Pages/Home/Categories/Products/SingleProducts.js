@@ -1,11 +1,16 @@
+import moment from 'moment';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const SingleProducts = ({ product }) => {
+    const CurrentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
+    console.log(CurrentTime);
+    const RecentTime = { CurrentTime };
+
     // const s = product.length;
     // console.log("total: ", s);
     const { picture, name, location, original_price, resale_price, year_of_use } = product;
-    console.log(product);
+    // console.log(product);
     return (
         <div>
             <div className='mx-9 mt-9'>
@@ -17,7 +22,7 @@ const SingleProducts = ({ product }) => {
                         <p>Original Price :{original_price}</p>
                         <p>Resale Price :{resale_price}</p>
                         <p>Year Of Use :{year_of_use}</p>
-                        <p>Time :</p>
+                        <p>Time : {RecentTime?.CurrentTime}</p>
                         <div className="card-actions justify-end">
                             <Link className="btn btn-primary">Book Now</Link>
                         </div>
