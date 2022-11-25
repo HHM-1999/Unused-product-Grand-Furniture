@@ -1,8 +1,8 @@
 import moment from 'moment';
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const SingleProducts = ({ product }) => {
+
+const SingleProducts = ({ product, setBooking }) => {
     const CurrentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
     console.log(CurrentTime);
     const RecentTime = { CurrentTime };
@@ -24,7 +24,9 @@ const SingleProducts = ({ product }) => {
                         <p>Year Of Use :{year_of_use}</p>
                         <p>Time : {RecentTime?.CurrentTime}</p>
                         <div className="card-actions justify-end">
-                            <Link className="btn btn-primary">Book Now</Link>
+
+                            <label onClick={() => setBooking(product)}
+                                htmlFor="modal" className="btn btn-primary text-white">Book Now</label>
                         </div>
                     </div>
                 </div>
