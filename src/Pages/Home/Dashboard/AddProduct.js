@@ -1,18 +1,20 @@
 
-import React from 'react';
+import React, { useContext } from 'react';
 import toast from 'react-hot-toast';
+import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 
 
 const AddProduct = () => {
+    const { user } = useContext(AuthContext);
     const handleAdd = (e) => {
         e.preventDefault();
         toast.success("Product Added")
         const form = e.target;
 
-        const name = form.name.value;
-        const email = form.email.value;
 
+
+        const email = form.email.value;
         const location = form.location.value;
         const phone = form.phone.value;
         const photo = form.photo.value;
@@ -24,13 +26,13 @@ const AddProduct = () => {
         const details = form.details.value;
 
         const AddProduct = {
-            name,
+            ProductName,
             Category,
             email,
             phone,
             photo,
             location,
-            ProductName,
+
             OriginalPrice,
             ResalePrice,
             YearUse,
@@ -90,12 +92,14 @@ const AddProduct = () => {
             <h1 className='text-black text-3xl'>Add Product</h1>
             <br></br>
             <form onSubmit={handleAdd} className='grid lg:grid-cols-2 gap-2 '>
+                <input type="text" name="ProductName" placeholder='Product Name' className='input w-full mt-3 input-bordered' />
+                <input type="text" name="email" placeholder='email' className='input w-full mt-3 input-bordered' defaultValue={user?.email} readOnly />
 
-                <input type="text" name="name" placeholder='User Name' className='input w-full  mt-3 input-bordered' />
-                <input type="email" name="email" placeholder='Email ID' className='input w-full  mt-3 input-bordered' />
+
+
                 <input type="text" name="phone" placeholder='Phone Number' className='input w-full  mt-3 input-bordered' />
                 <input type="text" name="Category" placeholder='Category' className='input w-full mt-3 input-bordered' />
-                <input type="text" name="ProductName" placeholder='Product Name' className='input w-full mt-3 input-bordered' />
+
 
                 <input type="text" name="photo" placeholder='Photo URL' className='input w-full mt-3 input-bordered' />
 

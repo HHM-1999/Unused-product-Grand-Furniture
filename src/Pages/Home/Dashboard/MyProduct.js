@@ -7,7 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 const MyProduct = () => {
     const { user } = useContext(AuthContext);
 
-    const { data: allproducts = [], isLoading, refetch } = useQuery({
+    const { data: allproducts, isLoading, refetch } = useQuery({
         queryKey: ['allproducts', user?.email],
         queryFn: async () => {
             const res = await fetch(`http://localhost:5000/allproducts?email=${user?.email}`);
@@ -17,9 +17,7 @@ const MyProduct = () => {
         }
 
     })
-    if (isLoading) {
-        return <Loading></Loading>
-    }
+
     const handleDelete = (id) => {
         console.log(id);
         fetch(`http://localhost:5000/allproducts/${id}`, {
@@ -33,7 +31,9 @@ const MyProduct = () => {
                 toast.success("Delete Successfully");
             })
     }
-
+    if (isLoading) {
+        return <Loading></Loading>
+    }
     return (
         <div className='mt-9 mx-9'>
             <h2>Products: {allproducts?.length}</h2>
@@ -60,18 +60,20 @@ const MyProduct = () => {
 
 
                             {
-                                allproducts?.map((allproducts, i) => <tr
-                                    key={allproducts._id}
-                                >
+                                allproducts?.map((allproduct, i) => {
+                                    return (
+                                        <tr key={allproduct._id}>
 
-                                    <th>{i + 1}</th>
-                                    <td>{allproducts.name}</td>
-                                    <td>{allproducts.OriginalPrice}</td>
-                                    <td>{allproducts.ResalePrice}</td>
-                                    <td><button onClick={() => handleDelete(allproducts?._id)} className='btn btn-sm-primary'>Available</button></td>
-                                    <td><button onClick={() => handleDelete(allproducts?._id)} className='btn btn-sm-primary'>delete</button></td>
+                                            <th>{i + 1}</th>
+                                            <td>{allproduct.name}</td>
+                                            <td>{allproduct.OriginalPrice}</td>
+                                            <td>{allproduct.ResalePrice}</td>
+                                            <td><button onClick={() => handleDelete(allproduct?._id)} className='btn btn-sm-primary'>Available</button></td>
+                                            <td><button onClick={() => handleDelete(allproduct?._id)} className='btn btn-sm-primary'>delete</button></td>
 
-                                </tr>)
+                                        </tr>
+                                    )
+                                })
                             }
                         </tbody>
                     </table>
