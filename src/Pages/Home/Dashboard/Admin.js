@@ -4,13 +4,14 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 import Loading from '../../Shared/Loading/Loading';
 
-const MyProduct = () => {
-    const { user } = useContext(AuthContext);
+const Admin = () => {
 
-    const { data: allproducts = [], isLoading, refetch } = useQuery({
-        queryKey: ['allproducts', user?.email],
+    const { user } = useContext(AuthContext);
+    const url = `http://localhost:5000/users?email=${user?.email}`;
+    const { data: users = [], isLoading, refetch } = useQuery({
+        queryKey: ['users', user?.email],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/allproducts?email=${user?.email}`);
+            const res = await fetch(url);
             const data = await res.json();
             return data;
 
@@ -20,9 +21,12 @@ const MyProduct = () => {
     if (isLoading) {
         return <Loading></Loading>
     }
+
+    ////delete
+
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/allproducts/${id}`, {
+        fetch(`http://localhost:5000/users/${id}`, {
             method: 'DELETE'
 
         })
@@ -33,12 +37,10 @@ const MyProduct = () => {
                 toast.success("Delete Successfully");
             })
     }
-
     return (
-        <div className='mt-9 mx-9'>
-            <h2>Products: {allproducts?.length}</h2>
+        <div>
             <div>
-                <h1 className='text-3xl'>My Orders</h1>
+                <h1 className='text-3xl'>Admin Panel</h1>
                 <br></br>
                 <div className="overflow-x-auto">
                     <table className="table w-auto
@@ -47,10 +49,9 @@ const MyProduct = () => {
                         <thead>
                             <tr>
                                 <th></th>
-                                <th>Original Price</th>
-                                <th>Resale Price</th>
-                                <th>Product Name</th>
-                                <th>Status</th>
+                                <th>Name</th>
+                                <th>Email Id</th>
+                                <th>Role</th>
                                 <th>Action</th>
 
 
@@ -60,16 +61,15 @@ const MyProduct = () => {
 
 
                             {
-                                allproducts?.map((allproducts, i) => <tr
-                                    key={allproducts._id}
+                                users?.map((users, i) => <tr
+                                    key={users._id}
                                 >
 
                                     <th>{i + 1}</th>
-                                    <td>{allproducts.name}</td>
-                                    <td>{allproducts.OriginalPrice}</td>
-                                    <td>{allproducts.ResalePrice}</td>
-                                    <td><button onClick={() => handleDelete(allproducts?._id)} className='btn btn-sm-primary'>Available</button></td>
-                                    <td><button onClick={() => handleDelete(allproducts?._id)} className='btn btn-sm-primary'>delete</button></td>
+                                    <td>{users.name}</td>
+                                    <td>{users.email}</td>
+                                    <td>{users.role}</td>
+                                    <td><button onClick={() => handleDelete(users?._id)} className='btn btn-sm-primary'>delete</button></td>
 
                                 </tr>)
                             }
@@ -81,4 +81,4 @@ const MyProduct = () => {
     );
 };
 
-export default MyProduct;
+export default Admin;

@@ -4,12 +4,16 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Home/Blog/Blog";
 import Products from "../../Pages/Home/Categories/Products/Products";
 import AddProduct from "../../Pages/Home/Dashboard/AddProduct";
+import Admin from "../../Pages/Home/Dashboard/Admin";
+import AllBuyer from "../../Pages/Home/Dashboard/AllBuyer";
+import AllSeller from "../../Pages/Home/Dashboard/AllSeller";
 import Dashboard from "../../Pages/Home/Dashboard/Dashboard";
+import MyBuyer from "../../Pages/Home/Dashboard/MyBuyer";
 import MyOrders from "../../Pages/Home/Dashboard/MyOrders";
+import MyProduct from "../../Pages/Home/Dashboard/MyProduct";
 import Home from "../../Pages/Home/Home/Home";
 import SignUp from "../../Pages/Home/SignUp/SignUp";
 import Login from "../../Pages/Login/Login";
-import AdminRoute from "./AdminRoute";
 import PrivateRoute from "./PrivateRoute";
 
 
@@ -84,7 +88,25 @@ const router = createBrowserRouter([
                 element: <AddProduct></AddProduct>
             },
             {
-                path: ''
+                path: '/dashboard/myProduct',
+                element: <MyProduct></MyProduct>
+
+            },
+            {
+                path: '/dashboard/myBuyer',
+                element: <MyBuyer></MyBuyer>
+            },
+            {
+                path: "/dashboard/allBuyer",
+                element: <AllBuyer></AllBuyer>
+            },
+            {
+                path: "/dashboard/allSeller",
+                element: <AllSeller></AllSeller>
+            },
+            {
+                path: "/dashboard/admin",
+                element: <Admin></Admin>
             }
         ]
     }
