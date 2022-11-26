@@ -1,10 +1,17 @@
 import { createBrowserRouter } from "react-router-dom";
+import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
 import Blog from "../../Pages/Home/Blog/Blog";
 import Products from "../../Pages/Home/Categories/Products/Products";
+import AddProduct from "../../Pages/Home/Dashboard/AddProduct";
 import Dashboard from "../../Pages/Home/Dashboard/Dashboard";
+import MyOrders from "../../Pages/Home/Dashboard/MyOrders";
 import Home from "../../Pages/Home/Home/Home";
+import SignUp from "../../Pages/Home/SignUp/SignUp";
 import Login from "../../Pages/Login/Login";
+import AdminRoute from "./AdminRoute";
+import PrivateRoute from "./PrivateRoute";
+
 
 
 const router = createBrowserRouter([
@@ -31,7 +38,7 @@ const router = createBrowserRouter([
             {
                 path: "/products/:id",
                 loader: ({ params }) => fetch(`http://localhost:5000/products/${params.id}`),
-                element: <Products></Products>
+                element: <PrivateRoute><Products></Products></PrivateRoute>
             },
             {
                 path: '/blog',
@@ -42,6 +49,10 @@ const router = createBrowserRouter([
                 path: '/login',
                 element: <Login></Login>
 
+            },
+            {
+                path: '/signup',
+                element: <SignUp></SignUp>
             },
             {
                 path: '*',
@@ -58,6 +69,23 @@ const router = createBrowserRouter([
                 </div>
             },
 
+        ]
+    }
+    , {
+        path: '/dashboard',
+        element: <DashboardLayout></DashboardLayout>,
+        children: [
+            {
+                path: '/dashboard',
+                element: <MyOrders></MyOrders>
+            },
+            {
+                path: '/dashboard/addproduct',
+                element: <AddProduct></AddProduct>
+            },
+            {
+                path: ''
+            }
         ]
     }
 ])

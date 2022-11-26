@@ -4,7 +4,7 @@ import React from 'react';
 
 const SingleProducts = ({ product, setBooking }) => {
     const CurrentTime = moment().format('MMMM Do YYYY, h:mm:ss a');
-    console.log(CurrentTime);
+    // console.log(CurrentTime);
     const RecentTime = { CurrentTime };
 
     // const s = product.length;

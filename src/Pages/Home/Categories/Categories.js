@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+
 import SingleCategories from './SingleCategories';
 
 const Categories = ({ category }) => {
@@ -19,11 +20,14 @@ const Categories = ({ category }) => {
                 <div className='grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mx-9 mt-9'>
 
                     {
-                        categories.map(category => <SingleCategories
-                            key={category._id}
-                            category={category}
+                        categories.map(category =>
+                            <SingleCategories
+                                key={category._id}
+                                category={category}
 
-                        ></SingleCategories>)
+                            ></SingleCategories>
+                        )
+
                     }
 
                     {

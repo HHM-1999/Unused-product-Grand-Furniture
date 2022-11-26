@@ -1,24 +1,26 @@
 import React, { useContext, useState } from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import useToken from '../../Hooks/useToken';
+// import useToken from '../../Hooks/useToken';
 import { AuthContext } from '../../Context/AuthProvider/AuthProvider';
+import { GoogleAuthProvider } from 'firebase/auth';
 
 
 const Login = () => {
 
     const { register, formState: { errors }, handleSubmit } = useForm();
-    const { signIn } = useContext(AuthContext);
+    const { signIn, providerLogin } = useContext(AuthContext);
     const [loginError, setLoginError] = useState('');
-    const [loginUserEmail, setLoginUserEmail] = useState('');
-    const [token] = useToken(loginUserEmail);
-    const location = useLocation();
+    const [setLoginUserEmail] = useState('');
+    const googleProvider = new GoogleAuthProvider();
+    // const [token] = useToken(loginUserEmail);
+    // const location = useLocation();
     const navigate = useNavigate();
-    const from = location.state?.from?.pathname || '/';
+    // const from = location.state?.from?.pathname || '/';
 
-    if (token) {
-        navigate(from, { replace: true });
-    }
+    // if (token) {
+    //     navigate(from, { replace: true });
+    // }
     // const [data, setData] = useState('');
 
     const handleLogin = data => {
@@ -29,11 +31,26 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 setLoginUserEmail(data.email);
+                navigate('/');
             })
             .catch(error => {
                 console.log(error.message)
                 setLoginError(error.message);
             });
+    }
+
+    ///Google sign in
+    const handleGoogleSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                // const user = result.user;
+                // console.log(user);
+                navigate('/');
+            })
+            .catch(error => console.error(error)
+            )
+
+
     }
     return (
         <div className='h-[800px] flex justify-center items-center'>
@@ -67,7 +84,7 @@ const Login = () => {
                 </form>
                 <p>New ??!! <Link className='text-primary' to="/signup">Create new Account</Link></p>
                 <div className="divider">OR</div>
-                <button className='btn btn-secondary w-full'> Login With GOOGLE</button>
+                <button onClick={handleGoogleSignIn} className='btn btn-secondary w-full'> Login With GOOGLE</button>
             </div>
         </div>
     );
