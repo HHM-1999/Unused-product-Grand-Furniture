@@ -27,7 +27,9 @@ const Advertise = ({ product, setBooking }) => {
 
                                 <div className="card-body gap-9">
                                     <h2 className="card-title flex justify-between ">
-                                        <span className='text-center item-center'>{focusproduct?.ProductName}</span>
+                                        <span className='text-center item-center text-2xl'>{focusproduct?.ProductName} : </span>
+                                        <br></br>
+                                        <span className='text-sm'> Original Price:{focusproduct?.OriginalPrice}</span>
                                         <span className='text-sm'> Resale Price: {focusproduct?.ResalePrice}</span>
                                     </h2>
 
