@@ -3,7 +3,7 @@ import React from 'react';
 // import BookingModal from '../Home/Categories/BookingModal/BookingModal';
 import Loading from '../Shared/Loading/Loading';
 
-const Advertise = ({ product, setBooking }) => {
+const Advertise = () => {
 
     const { data: focusProducts = [], isLoading } = useQuery({
         queryKey: ['focusProducts'],
@@ -27,14 +27,16 @@ const Advertise = ({ product, setBooking }) => {
 
                                 <div className="card-body gap-9">
                                     <h2 className="card-title flex justify-between ">
-                                        <span className='text-center item-center text-2xl'>{focusproduct?.ProductName} : </span>
+                                        <span className='text-center item-center text-2xl'>{focusproduct?.ProductName}</span>
+                                        <br>
+                                        </br>
                                         <br></br>
                                         <span className='text-sm'> Original Price:{focusproduct?.OriginalPrice}</span>
                                         <span className='text-sm'> Resale Price: {focusproduct?.ResalePrice}</span>
                                     </h2>
 
                                     <div className="card-actions justify-end">
-                                        <label onClick={() => setBooking(product)} htmlFor="modal" className="btn btn-sm btn-primary text-white">Book Now</label>
+                                        <label htmlFor="modal" className="btn btn-sm btn-primary text-white">Added</label>
                                         {/* <BookingModal focusProduct={focusproduct}></BookingModal> */}
                                     </div>
                                 </div>
