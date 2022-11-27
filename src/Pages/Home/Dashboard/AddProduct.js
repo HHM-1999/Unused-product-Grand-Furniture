@@ -85,7 +85,7 @@ const AddProduct = () => {
     }
 
     return (
-        <div className=' p-7 mt-9 mx-9 shadow-2xl w-auto'>
+        <div className=' p-5 mx-9 shadow-2xl w-auto'>
 
 
 
@@ -101,7 +101,7 @@ const AddProduct = () => {
                 <input type="text" name="Category" placeholder='Category' className='input w-full mt-3 input-bordered' />
 
 
-                <input type="text" name="photo" placeholder='Photo URL' className='input w-full mt-3 input-bordered' />
+                <input type="file" name="photo" placeholder='Upload photo' className='input w-full mt-3 input-bordered' required />
 
                 <input type="text" name="OriginalPrice" placeholder='Original Price' className='input w-full   mt-3 input-bordered' />
                 <input type="text" name="ResalePrice" placeholder='Resale Price' className='input w-full   mt-3 input-bordered' />

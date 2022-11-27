@@ -17,9 +17,9 @@
 
 ### Server side 
 
-### Code link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-HHM-1999
+### Code link : https://github.com/programming-hero-web-course-4/b612-used-products-resale-server-side-HHM-1999
 
-- There are diiferent type of functionality I used:
+- There are different type of functionality I used:
 
 1. npm init -y
 2. npm express

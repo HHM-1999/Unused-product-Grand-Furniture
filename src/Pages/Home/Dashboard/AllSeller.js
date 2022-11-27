@@ -15,16 +15,7 @@ const AllSeller = () => {
         }
 
     })
-    // const { data: allAdmin = [] } = useQuery({
-    //     queryKey: ['allAdmin'],
-    //     queryFn: async () => {
-    //         const res = await fetch("http://localhost:5000/users?role=admin");
-    //         const data = await res.json();
-    //         return data;
 
-    //     }
-
-    // })
 
     const handleSellerDelete = (id) => {
         console.log(id);
@@ -44,20 +35,6 @@ const AllSeller = () => {
         return <Loading></Loading>
     }
 
-    // const handleAdmin = (id) => {
-    //     console.log(id);
-    //     fetch(`http://localhost:5000/users/${id}`, {
-    //         method: 'PUT'
-
-    //     })
-    //         .then(res => res.json())
-    //         .then(data => {
-    //             console.log(data)
-    //             refetch();
-    //             toast.success("Congratulation");
-    //             refetch();
-    //         })
-    // }
 
     return (
         <div>
@@ -89,35 +66,18 @@ const AllSeller = () => {
 
                                     >
 
-                                        <th>{i + 1}</th>
+                                        <td>{i + 1}</td>
                                         <td>{allseller.name}</td>
                                         <td>{allseller.email}</td>
                                         <td>{allseller.role}</td>
                                         <td><button onClick={() => handleSellerDelete(allseller?._id)} className='btn btn-primary btn-sm'>delete</button>
-                                            {/* <button onClick={() => handleAdmin(allseller?._id)} className='btn btn-sm-primary'>Admin</button> */}
+
 
                                         </td>
 
                                     </tr>)
                                 }
 
-                                {/* {
-                                    allAdmin?.map((allseller, i) => <tr
-                                        key={allseller._id}
-
-                                    >
-
-                                        <th>{i + 1}</th>
-                                        <td>{allseller.name}</td>
-                                        <td>{allseller.email}</td>
-                                        <td>{allseller.role}</td>
-                                        <td><button onClick={() => handleSellerDelete(allseller?._id)} className='btn btn-sm-primary mx-2'>delete</button>
-                                            <button onClick={() => handleAdmin(allseller?._id)} className='btn btn-sm-primary'>Admin</button>
-
-                                        </td>
-
-                                    </tr>)
-                                } */}
                             </tbody>
                         </table>
                     </div>

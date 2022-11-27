@@ -67,7 +67,7 @@ const MyProduct = () => {
 
 
     return (
-        <div className='mt-9 mx-9'>
+        <div className='mx-9'>
             {/* <h2>Products: {allproducts?.length}</h2> */}
             <div>
                 <h1 className='text-3xl'>My Products</h1>
@@ -93,11 +93,11 @@ const MyProduct = () => {
 
 
                             {
-                                allproducts?.map((allproduct, i) => {
+                                allproducts?.map((allproduct) => {
                                     return (
                                         <tr key={allproduct._id}>
 
-                                            <th>{i + 1}</th>
+                                            {/* <th>{i + 1}</th> */}
                                             <td>{allproduct.ProductName}</td>
                                             <td>{allproduct.OriginalPrice}</td>
                                             <td>{allproduct.ResalePrice}</td>

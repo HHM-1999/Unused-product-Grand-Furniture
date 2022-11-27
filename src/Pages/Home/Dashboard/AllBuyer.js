@@ -84,12 +84,12 @@ const AllBuyer = () => {
 
 
                                     {
-                                        allBuyers?.map((allbuyer, i) => <tr
+                                        allBuyers?.map((allbuyer) => <tr
                                             key={allbuyer._id}
 
                                         >
 
-                                            <th>{i + 1}</th>
+
                                             <td>{allbuyer.name}</td>
                                             <td>{allbuyer.email}</td>
                                             <td>{allbuyer.role}</td>
