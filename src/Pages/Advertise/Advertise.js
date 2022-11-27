@@ -36,7 +36,7 @@ const Advertise = () => {
                                     </h2>
 
                                     <div className="card-actions justify-end">
-                                        <label htmlFor="modal" className="btn btn-sm btn-secondary text-white">Added✔️</label>
+                                        <label htmlFor="modal" className="btn btn-sm btn-warning text-white">Added✔️</label>
                                         {/* <BookingModal focusProduct={focusproduct}></BookingModal> */}
                                     </div>
                                 </div>
