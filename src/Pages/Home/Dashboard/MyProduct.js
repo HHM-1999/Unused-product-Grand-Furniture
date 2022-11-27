@@ -36,9 +36,9 @@ const MyProduct = () => {
     }
     return (
         <div className='mt-9 mx-9'>
-            <h2>Products: {allproducts?.length}</h2>
+            {/* <h2>Products: {allproducts?.length}</h2> */}
             <div>
-                <h1 className='text-3xl'>My Orders</h1>
+                <h1 className='text-3xl'>My Products</h1>
                 <br></br>
                 <div className="overflow-x-auto">
                     <table className="table w-auto
@@ -46,10 +46,11 @@ const MyProduct = () => {
 
                         <thead>
                             <tr>
-                                <th></th>
+
+                                <th>Product Name</th>
                                 <th>Original Price</th>
                                 <th>Resale Price</th>
-                                <th>Product Name</th>
+
                                 <th>Status</th>
                                 <th>Action</th>
 
