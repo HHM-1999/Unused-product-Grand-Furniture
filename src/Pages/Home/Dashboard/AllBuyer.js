@@ -16,16 +16,16 @@ const AllBuyer = () => {
 
     })
 
-    const { data: allAdmin = [] } = useQuery({
-        queryKey: ['allAdmin'],
-        queryFn: async () => {
-            const res = await fetch("http://localhost:5000/users?role=admin");
-            const data = await res.json();
-            return data;
+    // const { data: allAdmin = [] } = useQuery({
+    //     queryKey: ['allAdmin'],
+    //     queryFn: async () => {
+    //         const res = await fetch("http://localhost:5000/users?role=admin");
+    //         const data = await res.json();
+    //         return data;
 
-        }
+    //     }
 
-    })
+    // })
     const handleBuyerDelete = (id) => {
         console.log(id);
         fetch(`http://localhost:5000/users/${id}`, {
@@ -41,20 +41,20 @@ const AllBuyer = () => {
             })
     }
 
-    const handleAdmin = (id) => {
-        console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
-            method: 'PUT'
+    // const handleAdmin = (id) => {
+    //     console.log(id);
+    //     fetch(`http://localhost:5000/users/${id}`, {
+    //         method: 'PUT'
 
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                refetch();
-                toast.success("Congratulation");
-                refetch();
-            })
-    }
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             console.log(data)
+    //             refetch();
+    //             toast.success("Congratulation");
+    //             refetch();
+    //         })
+    // }
     if (isLoading) {
         return <Loading></Loading>
     }
@@ -93,13 +93,13 @@ const AllBuyer = () => {
                                             <td>{allbuyer.name}</td>
                                             <td>{allbuyer.email}</td>
                                             <td>{allbuyer.role}</td>
-                                            <td><button onClick={() => handleBuyerDelete(allbuyer?._id)} className='btn btn-sm-primary mx-2 '>delete</button>
-                                                <button onClick={() => handleAdmin(allbuyer?._id)} className='btn btn-sm-primary'>Admin</button>
+                                            <td><button onClick={() => handleBuyerDelete(allbuyer?._id)} className='btn btn-primary btn-sm'>delete</button>
+                                                {/* <button onClick={() => handleAdmin(allbuyer?._id)} className='btn btn-sm-primary'>Admin</button> */}
                                             </td>
 
                                         </tr>)
                                     }
-                                    {
+                                    {/* {
                                         allAdmin?.map((allbuyer, i) => <tr
                                             key={allbuyer._id}
 
@@ -114,7 +114,7 @@ const AllBuyer = () => {
                                             </td>
 
                                         </tr>)
-                                    }
+                                    } */}
 
 
                                 </tbody>

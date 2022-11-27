@@ -1,3 +1,60 @@
+### My project - Grand Furniture 
+### code link : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-HHM-1999
+
+### Client Side 
+
+- There are different type of functionality I used:
+1. create-react-app
+2. react-router-dom
+3. Framework -Tailwind And DaisyUI
+4. react-icons
+5. react-photo-view
+6. Firebase
+7. react hook 
+8. react query form
+
+
+
+### Server side 
+
+### Code link : https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-HHM-1999
+
+- There are diiferent type of functionality I used:
+
+1. npm init -y
+2. npm express
+3. npm cors
+4. npm mongodb
+5. npm dotenv
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

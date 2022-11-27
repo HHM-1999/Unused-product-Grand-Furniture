@@ -17,6 +17,35 @@ const MyProduct = () => {
         }
 
     })
+    const handleAvailable = (myProduct) => {
+
+        // const id = myProduct._id;
+        console.log(myProduct);
+        fetch(`http://localhost:5000/allproducts/${myProduct}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    refetch();
+                    toast.success('advertise successfully')
+                }
+
+            })
+        // fetch(`http://localhost:5000/allproducts/${id}`, {
+        //     method: 'PUT'
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         console.log(data);
+        //         if (data.modifiedCount > 0) {
+        //             refetch();
+        //             toast.success('advertise successfully')
+        //         }
+        //     })
+
+    }
 
     const handleDelete = (id) => {
         console.log(id);
@@ -31,9 +60,12 @@ const MyProduct = () => {
                 toast.success("Delete Successfully");
             })
     }
+
     if (isLoading) {
         return <Loading></Loading>
     }
+
+
     return (
         <div className='mt-9 mx-9'>
             {/* <h2>Products: {allproducts?.length}</h2> */}
@@ -66,11 +98,29 @@ const MyProduct = () => {
                                         <tr key={allproduct._id}>
 
                                             <th>{i + 1}</th>
-                                            <td>{allproduct.name}</td>
+                                            <td>{allproduct.ProductName}</td>
                                             <td>{allproduct.OriginalPrice}</td>
                                             <td>{allproduct.ResalePrice}</td>
-                                            <td><button onClick={() => handleDelete(allproduct?._id)} className='btn btn-sm-primary'>Available</button></td>
-                                            <td><button onClick={() => handleDelete(allproduct?._id)} className='btn btn-sm-primary'>delete</button></td>
+
+
+                                            <td>
+                                                {/* <button onClick={() => handleAvailable(allproduct?._id)} className='btn btn-sm-primary'>Available</button> */}
+
+                                                {
+                                                    (allproduct?.role === 'available')
+                                                        ?
+                                                        <button className='btn btn-primary btn-sm'>ADVERTIZE RUN</button>
+                                                        :
+                                                        <button onClick={() => handleAvailable(allproduct?._id)} className='btn btn-secondary btn-sm'>Available</button>
+
+                                                }
+
+
+
+                                            </td>
+
+
+                                            <td><button onClick={() => handleDelete(allproduct?._id)} className='btn btn-primary btn-sm'>delete</button></td>
 
                                         </tr>
                                     )
