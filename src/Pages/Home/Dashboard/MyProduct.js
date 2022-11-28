@@ -33,17 +33,7 @@ const MyProduct = () => {
                 }
 
             })
-        // fetch(`http://localhost:5000/allproducts/${id}`, {
-        //     method: 'PUT'
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.modifiedCount > 0) {
-        //             refetch();
-        //             toast.success('advertise successfully')
-        //         }
-        //     })
+
 
     }
 
@@ -82,7 +72,7 @@ const MyProduct = () => {
                                 <th>Product Name</th>
                                 <th>Original Price</th>
                                 <th>Resale Price</th>
-
+                                <th>Photo</th>
                                 <th>Status</th>
                                 <th>Action</th>
 
@@ -101,6 +91,7 @@ const MyProduct = () => {
                                             <td>{allproduct.ProductName}</td>
                                             <td>{allproduct.OriginalPrice}</td>
                                             <td>{allproduct.ResalePrice}</td>
+                                            <td>{allproduct.photo}</td>
 
 
                                             <td>

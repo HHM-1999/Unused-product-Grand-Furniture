@@ -11,9 +11,6 @@ const AddProduct = () => {
         e.preventDefault();
         toast.success("Product Added")
         const form = e.target;
-
-
-
         const email = form.email.value;
         const location = form.location.value;
         const phone = form.phone.value;
@@ -32,7 +29,6 @@ const AddProduct = () => {
             phone,
             photo,
             location,
-
             OriginalPrice,
             ResalePrice,
             YearUse,

@@ -15,6 +15,24 @@ const AllSeller = () => {
         }
 
     })
+    const handleVerifySeller = (mySeller) => {
+
+        const id = mySeller._id;
+        console.log(mySeller);
+        fetch(`http://localhost:5000/users/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.modifiedCount > 0) {
+                    toast.success('verification done successfully');
+                }
+
+            })
+
+
+    }
 
 
     const handleSellerDelete = (id) => {
@@ -26,7 +44,7 @@ const AllSeller = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                refetch();
+
                 toast.success("User Delete Successfully");
                 refetch();
             })
@@ -43,18 +61,13 @@ const AllSeller = () => {
                     <h1 className='text-3xl'>All Seller</h1>
                     <br></br>
                     <div className="overflow-x-auto">
-                        <table className="table w-auto
-                ">
-
+                        <table className="table w-auto">
                             <thead>
                                 <tr>
-                                    <th></th>
                                     <th>Name</th>
                                     <th>Email Id</th>
-                                    <th>Role</th>
+                                    <th>Mode</th>
                                     <th>Action</th>
-
-
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,14 +83,32 @@ const AllSeller = () => {
                                         <td>{allseller.name}</td>
                                         <td>{allseller.email}</td>
                                         <td>{allseller.role}</td>
+
+
+                                        <td>
+                                            {/* <button onClick={() => handleAvailable(allproduct?._id)} className='btn btn-sm-primary'>Available</button> */}
+
+                                            {
+                                                (allseller?.verify === 'verify')
+                                                    ?
+                                                    <button className='btn btn-ghost btn-sm'>✔️</button>
+                                                    :
+                                                    <button onClick={() => handleVerifySeller(allseller?._id)} className='btn btn-secondary btn-sm'>Verify Seller</button>
+
+                                            }
+
+
+
+                                        </td>
+
                                         <td><button onClick={() => handleSellerDelete(allseller?._id)} className='btn btn-primary btn-sm'>delete</button>
 
 
                                         </td>
 
                                     </tr>)
-                                }
 
+                                }
                             </tbody>
                         </table>
                     </div>
