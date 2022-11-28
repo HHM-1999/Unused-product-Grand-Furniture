@@ -8,7 +8,7 @@ const Advertise = () => {
     const { data: focusProducts = [], isLoading } = useQuery({
         queryKey: ['focusProducts'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allproducts/home?role=available');
+            const res = await fetch('https://server-side-hhm-1999.vercel.app/allproducts/home?role=available');
             const data = await res.json();
             return data;
         }

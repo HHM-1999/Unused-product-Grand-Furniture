@@ -7,7 +7,7 @@ import Loading from '../../Shared/Loading/Loading';
 const Admin = () => {
 
     const { user } = useContext(AuthContext);
-    const url = `http://localhost:5000/users?email=${user?.email}`;
+    const url = `https://server-side-hhm-1999.vercel.app/users?email=${user?.email}`;
     const { data: users = [], isLoading, refetch } = useQuery({
         queryKey: ['users', user?.email],
         queryFn: async () => {
@@ -26,7 +26,7 @@ const Admin = () => {
 
     const handleDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://server-side-hhm-1999.vercel.app/users/${id}`, {
             method: 'DELETE'
 
         })

@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import Loading from '../../Shared/Loading/Loading';
 
 const AllBuyer = () => {
-    const url = ("http://localhost:5000/users?role=Buyer");
+    const url = ("https://server-side-hhm-1999.vercel.app/users?role=Buyer");
     const { data: allBuyers = [], isLoading, refetch } = useQuery({
         queryKey: ['allBuyers'],
         queryFn: async () => {
@@ -19,7 +19,7 @@ const AllBuyer = () => {
     // const { data: allAdmin = [] } = useQuery({
     //     queryKey: ['allAdmin'],
     //     queryFn: async () => {
-    //         const res = await fetch("http://localhost:5000/users?role=admin");
+    //         const res = await fetch("https://server-side-hhm-1999.vercel.app/users?role=admin");
     //         const data = await res.json();
     //         return data;
 
@@ -28,7 +28,7 @@ const AllBuyer = () => {
     // })
     const handleBuyerDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://server-side-hhm-1999.vercel.app/users/${id}`, {
             method: 'DELETE'
 
         })
@@ -43,7 +43,7 @@ const AllBuyer = () => {
 
     // const handleAdmin = (id) => {
     //     console.log(id);
-    //     fetch(`http://localhost:5000/users/${id}`, {
+    //     fetch(`https://server-side-hhm-1999.vercel.app/users/${id}`, {
     //         method: 'PUT'
 
     //     })

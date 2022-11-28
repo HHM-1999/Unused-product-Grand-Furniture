@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import Loading from '../../Shared/Loading/Loading';
 
 const AllSeller = () => {
-    const url = ("http://localhost:5000/users?role=Seller");
+    const url = ("https://server-side-hhm-1999.vercel.app/users?role=Seller");
     const { data: allSellers = [], isLoading, refetch } = useQuery({
         queryKey: ['allSellers'],
         queryFn: async () => {
@@ -19,7 +19,7 @@ const AllSeller = () => {
 
         const id = mySeller._id;
         console.log(mySeller);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://server-side-hhm-1999.vercel.app/users/${id}`, {
             method: 'PUT'
         })
             .then(res => res.json())
@@ -37,7 +37,7 @@ const AllSeller = () => {
 
     const handleSellerDelete = (id) => {
         console.log(id);
-        fetch(`http://localhost:5000/users/${id}`, {
+        fetch(`https://server-side-hhm-1999.vercel.app/users/${id}`, {
             method: 'DELETE'
 
         })
