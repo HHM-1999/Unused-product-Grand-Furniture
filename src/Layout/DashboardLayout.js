@@ -2,20 +2,15 @@ import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-
 import Header from '../Pages/Shared/Header/Header';
 import Loading from '../Pages/Shared/Loading/Loading';
 
-// import { AuthContext } from '../Context/AuthProvider/AuthProvider';
-// import useAdmin from '../Hooks/useAdmin';
 
 
 
 const DashboardLayout = () => {
-    // const { user } = useContext(AuthContext);
-    // const [isAdmin] = useAdmin(user?.email);
+
     const { user } = useContext(AuthContext);
-    // const email = user?.email;
     console.log(user?.email);
 
     const { data: userRole, isLoading } = useQuery({
