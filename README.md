@@ -1,6 +1,12 @@
 ### My project - Grand Furniture 
 ### code link : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-HHM-1999
 
+
+
+#### Admin Email: " meliy78650@probdd.com "
+##### Admin Password: " Meliy78650@ "
+
+
 ### Client Side 
 
 - There are different type of functionality I used:
