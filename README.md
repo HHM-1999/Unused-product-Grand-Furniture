@@ -1,5 +1,5 @@
 ### My project - Grand Furniture 
-### code link : https://github.com/programming-hero-web-course-4/b612-used-products-resale-clients-side-HHM-1999
+### Live link : https://melodic-rugelach-03355e.netlify.app/
 
 
 
